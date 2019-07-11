@@ -16,12 +16,15 @@ Auth::routes();
 
 // CustomerController
 Route::get('/account', 'CustomerController@account');
-Route::get('/book', 'CustomerController@book');
+Route::get('/editAccount', 'CustomerController@editAccount');
+Route::post('/addAccount', 'CustomerController@addAccount');
+Route::post('/updateAccount', 'CustomerController@updateAccount');
+Route::get('/book/{id}', 'CustomerController@book');
 Route::get('/cart', 'CustomerController@cart');
 Route::get('/editAccount', 'CustomerController@editAccount');
 Route::get('/paymentComplete', 'CustomerController@paymentComplete');
 Route::get('/user', 'CustomerController@user');
-Route::get('/category', 'CustomerController@category');
+Route::get('/category/{id}', 'CustomerController@category');
 
 // SupplierController
 Route::get('/orders', 'SupplierController@orders');

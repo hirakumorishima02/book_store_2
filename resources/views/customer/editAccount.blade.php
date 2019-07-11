@@ -8,31 +8,63 @@
         <p>アカウント情報</p>
         </div>
             <table class="uk-table uk-table-hover uk-table-divider">
-            <form action="/updateAccount">
+                @if(isset($userInfo)||isset($user))
+                <form action="/updateAccount" method="post">
+                {{ csrf_field() }}
                 <tr>
                     <td>お名前</td>
-                    <td><input class="uk-input" type="text" name="name" value="森島啓"></td>
+                    <td><input class="uk-input" type="text" name="name" value="{{$user->name}}"></td>
                 </tr>
                 <tr>
                     <td>郵便番号</td>
-                    <td><input class="uk-input" type="text" name="zip_code" value="600-0000"></td>
+                    <td><input class="uk-input" type="text" name="zip_code" value="{{$userInfo->zip_code}}"></td>
                 </tr>
                 <tr>
                     <td>住所</td>
-                    <td><input class="uk-input" type="text" name="address" value="京都府京都市〇〇〇〇"></td>
+                    <td><input class="uk-input" type="text" name="address" value="{{$userInfo->address}}"></td>
                 </tr>
                 <tr>
                     <td>email</td>
-                    <td><input class="uk-input" type="text" name="email" value="ujinchu@gmail.com"></td>
+                    <td><input class="uk-input" type="text" name="email" value="{{$user->email}}"></td>
                 </tr>
                 <tr>
                     <td>電話番号</td>
-                    <td><input class="uk-input" type="text" name="tel" value="000-0000-0000"></td>
+                    <td><input class="uk-input" type="text" name="tel" value="{{$userInfo->tel}}"></td>
                 </tr>
+                <tr>
                     <td>
                         <button class="uk-button uk-button-primary" onclick='return confirm("編集を完了しますか？");'>編集完了</button>
                     </td>
                 </tr>
+                @else
+                <form action="/addAccount" method="post">
+                {{ csrf_field() }}
+                <tr>
+                    <td>お名前</td>
+                    <td><input class="uk-input" type="text" name="name" value="{{$user->name}}"></td>
+                </tr>
+                <tr>
+                    <td>郵便番号</td>
+                    <td><input class="uk-input" type="text" name="zip_code"></td>
+                </tr>
+                <tr>
+                    <td>住所</td>
+                    <td><input class="uk-input" type="text" name="address"></td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td><input class="uk-input" type="text" name="email" value="{{$user->email}}"></td>
+                </tr>
+                <tr>
+                    <td>電話番号</td>
+                    <td><input class="uk-input" type="text" name="tel"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="uk-button uk-button-primary" onclick='return confirm("編集を完了しますか？");'>編集完了</button>
+                    </td>
+                </tr>
+                @endif
             </form>
         </table>
     </div>

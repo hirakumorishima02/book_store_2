@@ -1,12 +1,12 @@
 @extends('layout')
-@section('title','書籍情報')
+@section('title',$book->title)
 @section('body')
 
 <div class="container">
     <!--本の情報と画像-->
     <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
         <div class="uk-card-media-left uk-cover-container" style="height:300px;width:200px;">
-            <img src="/images/bussiness.jpg" alt="" uk-cover>
+            <img src="{{$book->photo_path}}" alt="" uk-cover>
         </div>
         <!--本情報-->
         <div>
@@ -18,23 +18,23 @@
                     <tbody>
                         <tr>
                             <td class="uk-width-small">タイトル</td>
-                            <td>〇〇〇〇〇〇〇〇〇〇</td>
+                            <td>{{$book->title}}</td>
                         </tr>
                         <tr>
                             <td class="uk-width-small">金額</td>
-                            <td>120円</td>
+                            <td>{{$book->price}}円</td>
                         </tr>
                         <tr>
                             <td class="uk-width-small">出版社</td>
-                            <td>本の友の会</td>
+                            <td>{{$book->publisher}}</td>
                         </tr>
                         <tr>
                             <td class="uk-width-small">ISBN</td>
-                            <td>978-4-7710-1067-3</td>
+                            <td>{{$book->isbn}}</td>
                         </tr>
                         <tr>
                             <td class="uk-width-small">本の状態</td>
-                            <td>非常に良い</td>
+                            <td>{{$status}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -47,7 +47,7 @@
 <form action="/confirmSubscribe">
     <fieldset class="uk-fieldset">
     <p style="text-align:center;margin-top:10px;" uk-margin>
-        <button class="uk-button uk-button-primary uk-button-large">カートに入れる</button>
+        <button class="uk-button uk-button-primary uk-button-large" value="{{$book->id}}">カートに入れる</button>
     </p>
     </fieldset>
 </form>

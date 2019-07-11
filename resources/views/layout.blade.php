@@ -26,11 +26,11 @@
                     <a href="#">本のカテゴリー</a>
                     <div class="uk-navbar-dropdown">
                         <ul class="uk-nav uk-navbar-dropdown-nav">
-                            <li><a href="/category">小説</a></li>
-                            <li><a href="/category">ノンフィクション</a></li>
-                            <li><a href="/category">ビジネス</a></li>
-                            <li><a href="/category">漫画</a></li>
-                            <li><a href="/category">その他</a></li>
+                            <li><a href="/category/1">小説</a></li>
+                            <li><a href="/category/2">ノンフィクション</a></li>
+                            <li><a href="/category/3">ビジネス</a></li>
+                            <li><a href="/category/4">漫画</a></li>
+                            <li><a href="/category/5">その他</a></li>
                         </ul>
                     </div>
                 </li>

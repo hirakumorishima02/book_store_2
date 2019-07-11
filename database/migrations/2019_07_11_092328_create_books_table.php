@@ -20,6 +20,7 @@ class CreateBooksTable extends Migration
             $table->text('author'); //本の著者
             $table->string('isbn'); //ISBN番号
             $table->integer('price'); //本の値段
+            $table->text('publisher');
             $table->integer('status'); //本の状態 1 = 新品同様 2 = 古本 3 = 汚い
             $table->text('photo_path'); //S3の画像パス
             $table->timestamps();

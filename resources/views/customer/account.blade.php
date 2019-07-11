@@ -7,34 +7,37 @@
         <div class="uk-text-large">
         <p>アカウント情報</p>
         </div>
+            @if(isset($userInfo)||isset($user))
             <table class="uk-table uk-table-hover uk-table-divider">
                 <tr>
                     <td>お名前</td>
-                    <td>森島啓</td>
+                    <td>{{$user->name}}</td>
                 </tr>
                 <tr>
                     <td>郵便番号</td>
-                    <td>600-0000</td>
+                    <td>{{$userInfo->zip_code}}</td>
                 </tr>
                 <tr>
                     <td>住所</td>
-                    <td>京都府京都市〇〇〇〇</td>
+                    <td>{{$userInfo->address}}</td>
                 </tr>
                 <tr>
                     <td>email</td>
-                    <td>ujinchu@gmail.com</td>
+                    <td>{{$user->email}}</td>
                 </tr>
                 <tr>
                     <td>電話番号</td>
-                    <td>000-0000-0000</td>
+                    <td>{{$userInfo->tel}}</td>
                 </tr>
                     <td>
-                    <form action="/editAccount">
-                        <button class="uk-button uk-button-primary">情報の編集</button>
-                    </form>
+                        <a href="/editAccount"><button class="uk-button uk-button-primary">情報の編集</button></a>
                     </td>
                 </tr>
         </table>
+        @else
+        まだアカウント情報がありません。<br>
+        <a href="/editAccount"><button class="uk-button uk-button-primary">情報の登録</button></a>
+        @endif
     </div>
 </div>
 @endsection
