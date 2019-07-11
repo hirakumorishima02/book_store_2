@@ -44,10 +44,11 @@
     <!--本の情報と画像ここまで-->
 <!--応募フォーム-->
 <div style="width:700px;margin: 0 auto;">
-<form action="/confirmSubscribe">
+<form action="/bookToCart" method="post">
+{{ csrf_field() }}
     <fieldset class="uk-fieldset">
     <p style="text-align:center;margin-top:10px;" uk-margin>
-        <button class="uk-button uk-button-primary uk-button-large" value="{{$book->id}}">カートに入れる</button>
+        <button class="uk-button uk-button-primary uk-button-large" name="cart_item" value="{{$book->id}}">カートに入れる</button>
     </p>
     </fieldset>
 </form>

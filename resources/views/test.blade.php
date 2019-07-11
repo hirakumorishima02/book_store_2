@@ -1,37 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>テスト</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- UIkit CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/css/uikit.min.css" />
-    <!-- UIkit JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/js/uikit-icons.min.js"></script>
-    <!--jQuery-->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"></script>
-</head>
-<body>
-    
-<div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow>
+@extends('layout')
+@section('title','test')
+@section('body')
 
-    <ul class="uk-slideshow-items">
-        <li>
-            あ
-        </li>
-        <li>
-            い
-        </li>
-        <li>
-            う
-        </li>
-    </ul>
+<?php
+$session_data = "保存前"
+?>
+<p>{{$session_data}}</p>
 
-    <a class="uk-slidenav-large uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
-    <a class="uk-slidenav-large uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+<form action="/hello/session" method="post">
+{{csrf_field()}}
+<input type="text" name="input">
+<input type="submit" value="send">
+</form>
 
-</div>
-
-</body>
-</html>
+@endsection

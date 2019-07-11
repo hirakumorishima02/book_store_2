@@ -32,3 +32,6 @@ Route::get('/registration', 'SupplierController@registration');
 
 // logout
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+// sessiont
+Route::get('test','CustomerController@test');

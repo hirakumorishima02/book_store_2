@@ -93,4 +93,9 @@ class CustomerController extends Controller
         $bookList = Book::where('category_id','=', $id)->get();
         return view('customer.category',compact('category','bookList'));
     }
+    
+    // test
+    public function test(){
+        return view('test');
+    }
 }

@@ -399,7 +399,7 @@
 <hr class="uk-divider-icon">
     <section class="follow-item" id="category">
     <div class="uk-card uk-card-default uk-card-body" style="z-index: 980;text-align:center;" uk-sticky="bottom: #offset"><h3>カテゴリー</h3></div>
-    <a href="/category">
+    <a href="/category/1">
         <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
             <div class="uk-card-media-left uk-cover-container">
                 <img src="/images/novel.jpg" alt="" uk-cover>
@@ -413,7 +413,7 @@
             </div>
         </div>
     </a>
-    <a href="/category">
+    <a href="/category/2">
         <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
             <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
                 <img src="/images/nonfiction.png" alt="" uk-cover>
@@ -427,7 +427,7 @@
             </div>
         </div>
     </a>
-    <a href="/category">
+    <a href="/category/3">
         <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
             <div class="uk-card-media-left uk-cover-container">
                 <img src="/images/bussiness.jpg" alt="" uk-cover>
@@ -441,7 +441,7 @@
             </div>
         </div>
     </a>
-    <a href="/category">
+    <a href="/category/4">
         <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
             <div class="uk-flex-last@s uk-card-media-right uk-cover-container">
                 <img src="/images/comic.jpg" alt="" uk-cover>
@@ -455,7 +455,7 @@
             </div>
         </div>
     </a>
-    <a href="/category">
+    <a href="/category/5">
         <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
             <div class="uk-card-media-left uk-cover-container">
                 <img src="/images/others.jpg" alt="" uk-cover>
