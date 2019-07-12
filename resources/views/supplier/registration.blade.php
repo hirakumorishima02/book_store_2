@@ -16,8 +16,8 @@
 <nav class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-left">
         <ul class="uk-navbar-nav">
-            <li><a href="orders.html">注文一覧</a></li>
-            <li><a href="registration.html">商品登録</a></li>
+            <li><a href="/orders">注文一覧</a></li>
+            <li><a href="/registration">商品登録</a></li>
         </ul>
     </div>
 </nav>
@@ -27,6 +27,7 @@
         <tr>
             <td>商品名</td>
             <td>著者名</td>
+            <td>出版社</td>
             <td>ISBN</td>
             <td>価格</td>
             <td>画像パス</td>
@@ -35,15 +36,18 @@
         </tr>
     </thead>
     <tbody>
-        <form action="registrateNewBook">
+        <form action="/registrateNewBook" method="post">
+        {{ csrf_field() }}
+        @for($i = 0 ; $i < 3; $i ++)
         <tr>
-            <td><input type="text" name="title"></td>
-            <td><input type="text" name="author"></td>
-            <td><input type="text" name="isbn"></td>
-            <td><input type="text" name="price"></td>
-            <td><input type="file" name="photo_path"></td>
+            <td><input type="text" name="title[]"></td>
+            <td><input type="text" name="author[]"></td>
+            <td><input type="text" name="publisher[]"></td>
+            <td><input type="text" name="isbn[]"></td>
+            <td><input type="text" name="price[]"></td>
+            <td><input type="file" name="photo_path[]"></td>
             <td>
-                <select name="status">
+                <select name="status[]">
                     <option value="1">新品同様</option>
                     <option value="2">古本</option>
                     <option value="3">汚い</option>
@@ -51,7 +55,7 @@
                 </select>
             </td>
             <td>
-                <select name="category_id">
+                <select name="category_id[]">
                     <option value="1">小説</option>
                     <option value="2">ノンフィクション</option>
                     <option value="3">ビジネス</option>
@@ -60,222 +64,8 @@
                 </select>
             </td>
         </tr>
-        <tr>
-            <td><input type="text" name="title"></td>
-            <td><input type="text" name="author"></td>
-            <td><input type="text" name="isbn"></td>
-            <td><input type="text" name="price"></td>
-            <td><input type="file" name="photo_path"></td>
-            <td>
-                <select name="status">
-                    <option value="1">新品同様</option>
-                    <option value="2">古本</option>
-                    <option value="3">汚い</option>
-                    <option></option>
-                </select>
-            </td>
-            <td>
-                <select name="category_id">
-                    <option value="1">小説</option>
-                    <option value="2">ノンフィクション</option>
-                    <option value="3">ビジネス</option>
-                    <option value="4">漫画</option>
-                    <option value="5">その他</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td><input type="text" name="title"></td>
-            <td><input type="text" name="author"></td>
-            <td><input type="text" name="isbn"></td>
-            <td><input type="text" name="price"></td>
-            <td><input type="file" name="photo_path"></td>
-            <td>
-                <select name="status">
-                    <option value="1">新品同様</option>
-                    <option value="2">古本</option>
-                    <option value="3">汚い</option>
-                    <option></option>
-                </select>
-            </td>
-            <td>
-                <select name="category_id">
-                    <option value="1">小説</option>
-                    <option value="2">ノンフィクション</option>
-                    <option value="3">ビジネス</option>
-                    <option value="4">漫画</option>
-                    <option value="5">その他</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td><input type="text" name="title"></td>
-            <td><input type="text" name="author"></td>
-            <td><input type="text" name="isbn"></td>
-            <td><input type="text" name="price"></td>
-            <td><input type="file" name="photo_path"></td>
-            <td>
-                <select name="status">
-                    <option value="1">新品同様</option>
-                    <option value="2">古本</option>
-                    <option value="3">汚い</option>
-                    <option></option>
-                </select>
-            </td>
-            <td>
-                <select name="category_id">
-                    <option value="1">小説</option>
-                    <option value="2">ノンフィクション</option>
-                    <option value="3">ビジネス</option>
-                    <option value="4">漫画</option>
-                    <option value="5">その他</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td><input type="text" name="title"></td>
-            <td><input type="text" name="author"></td>
-            <td><input type="text" name="isbn"></td>
-            <td><input type="text" name="price"></td>
-            <td><input type="file" name="photo_path"></td>
-            <td>
-                <select name="status">
-                    <option value="1">新品同様</option>
-                    <option value="2">古本</option>
-                    <option value="3">汚い</option>
-                    <option></option>
-                </select>
-            </td>
-            <td>
-                <select name="category_id">
-                    <option value="1">小説</option>
-                    <option value="2">ノンフィクション</option>
-                    <option value="3">ビジネス</option>
-                    <option value="4">漫画</option>
-                    <option value="5">その他</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td><input type="text" name="title"></td>
-            <td><input type="text" name="author"></td>
-            <td><input type="text" name="isbn"></td>
-            <td><input type="text" name="price"></td>
-            <td><input type="file" name="photo_path"></td>
-            <td>
-                <select name="status">
-                    <option value="1">新品同様</option>
-                    <option value="2">古本</option>
-                    <option value="3">汚い</option>
-                    <option></option>
-                </select>
-            </td>
-            <td>
-                <select name="category_id">
-                    <option value="1">小説</option>
-                    <option value="2">ノンフィクション</option>
-                    <option value="3">ビジネス</option>
-                    <option value="4">漫画</option>
-                    <option value="5">その他</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td><input type="text" name="title"></td>
-            <td><input type="text" name="author"></td>
-            <td><input type="text" name="isbn"></td>
-            <td><input type="text" name="price"></td>
-            <td><input type="file" name="photo_path"></td>
-            <td>
-                <select name="status">
-                    <option value="1">新品同様</option>
-                    <option value="2">古本</option>
-                    <option value="3">汚い</option>
-                    <option></option>
-                </select>
-            </td>
-            <td>
-                <select name="category_id">
-                    <option value="1">小説</option>
-                    <option value="2">ノンフィクション</option>
-                    <option value="3">ビジネス</option>
-                    <option value="4">漫画</option>
-                    <option value="5">その他</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td><input type="text" name="title"></td>
-            <td><input type="text" name="author"></td>
-            <td><input type="text" name="isbn"></td>
-            <td><input type="text" name="price"></td>
-            <td><input type="file" name="photo_path"></td>
-            <td>
-                <select name="status">
-                    <option value="1">新品同様</option>
-                    <option value="2">古本</option>
-                    <option value="3">汚い</option>
-                    <option></option>
-                </select>
-            </td>
-            <td>
-                <select name="category_id">
-                    <option value="1">小説</option>
-                    <option value="2">ノンフィクション</option>
-                    <option value="3">ビジネス</option>
-                    <option value="4">漫画</option>
-                    <option value="5">その他</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td><input type="text" name="title"></td>
-            <td><input type="text" name="author"></td>
-            <td><input type="text" name="isbn"></td>
-            <td><input type="text" name="price"></td>
-            <td><input type="file" name="photo_path"></td>
-            <td>
-                <select name="status">
-                    <option value="1">新品同様</option>
-                    <option value="2">古本</option>
-                    <option value="3">汚い</option>
-                    <option></option>
-                </select>
-            </td>
-            <td>
-                <select name="category_id">
-                    <option value="1">小説</option>
-                    <option value="2">ノンフィクション</option>
-                    <option value="3">ビジネス</option>
-                    <option value="4">漫画</option>
-                    <option value="5">その他</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td><input type="text" name="title"></td>
-            <td><input type="text" name="author"></td>
-            <td><input type="text" name="isbn"></td>
-            <td><input type="text" name="price"></td>
-            <td><input type="file" name="photo_path"></td>
-            <td>
-                <select name="status">
-                    <option value="1">新品同様</option>
-                    <option value="2">古本</option>
-                    <option value="3">汚い</option>
-                    <option></option>
-                </select>
-            </td>
-            <td>
-                <select name="category_id">
-                    <option value="1">小説</option>
-                    <option value="2">ノンフィクション</option>
-                    <option value="3">ビジネス</option>
-                    <option value="4">漫画</option>
-                    <option value="5">その他</option>
-                </select>
-            </td>
-        </tr>
+        <input type="hidden" name="num[]">
+        @endfor
         <tr><td><input type="submit" value="登録"></td></tr>
         </form>
     </tbody>

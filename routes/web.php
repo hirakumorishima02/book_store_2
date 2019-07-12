@@ -32,6 +32,7 @@ Route::get('/category/{id}', 'CustomerController@category');
 // SupplierController
 Route::get('/orders', 'SupplierController@orders');
 Route::get('/registration', 'SupplierController@registration');
+route::post('/registrateNewBook','SupplierController@registrateNewBook');
 
 // logout
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');
