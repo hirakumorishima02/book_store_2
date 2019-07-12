@@ -8,6 +8,8 @@ use App\Category;
 use App\Book;
 use App\User;
 use App\UserInfo;
+use \Cart;
+use App\Buyable;
 
 class CustomerController extends Controller
 {
@@ -37,7 +39,8 @@ class CustomerController extends Controller
     }
     
     public function cart(){
-        return view('customer.cart');
+        $carts = Cart::content();
+        return view('customer.cart')->with(compact('carts'));
     }
     
     public function editAccount(){
@@ -85,7 +88,12 @@ class CustomerController extends Controller
     }
     
     public function user(){
-        return view('customer.user');
+        $bookList = Book::all();
+        $i = mt_rand(0, count($bookList)-1);
+        $j = mt_rand(0, count($bookList)-1);
+        $k = mt_rand(0, count($bookList)-1);
+        $l = mt_rand(0, count($bookList)-1);
+        return view('customer.user',compact('bookList','i','j','k','l'));
     }
     
     public function category($id){
@@ -93,6 +101,34 @@ class CustomerController extends Controller
         $bookList = Book::where('category_id','=', $id)->get();
         return view('customer.category',compact('category','bookList'));
     }
+    
+    public function bookToCart($book_id) {
+        $book = Book::findOrFail($book_id);
+        
+        Cart::add([
+            [
+                'id' => $book->id,
+                'name' => $book->title,
+                'qty' => '1',
+                'price' => $book->price,
+                'weight' => '1',
+                'options' => ['photo_path'=> $book->photo_path]
+                ]
+            ]);
+        
+        $carts = Cart::content();
+        return view('customer.cart')->with(compact('carts'));
+    }
+    
+    public function reset() {
+        Cart::destroy();
+        return redirect('/cart');
+    }
+    public function remove($rowId) {
+        Cart::remove($rowId);
+        return redirect('/cart');
+    }
+    
     
     // test
     public function test(){

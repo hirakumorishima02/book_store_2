@@ -44,7 +44,7 @@
     <!--本の情報と画像ここまで-->
 <!--応募フォーム-->
 <div style="width:700px;margin: 0 auto;">
-<form action="/bookToCart" method="post">
+<form action="/bookToCart/{{$book->id}}" method="get">
 {{ csrf_field() }}
     <fieldset class="uk-fieldset">
     <p style="text-align:center;margin-top:10px;" uk-margin>
