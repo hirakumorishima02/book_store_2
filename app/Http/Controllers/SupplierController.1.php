@@ -16,8 +16,9 @@ class SupplierController extends Controller
         return view('supplier.registration');
     }
     
-public function registrateNewBook(Request $request){
-                 $this->validate($request, [
+    public function registrateNewBook(Request $request){
+        
+        $this->validate($request, [
             'photo_path' => [
                 // 必須
                 'required',
@@ -31,11 +32,13 @@ public function registrateNewBook(Request $request){
                 'dimensions:min_width=20,min_height=20,max_width=500,max_height=500',
             ]
         ]);
-                if ($request->file('photo_path')->isValid([])) {
+        
+       if ($request->file('photo_path')->isValid([])) {
         $path = $request->photo_path->store('photo', 's3');
         Storage::disk('s3')->setVisibility($path, 'public');
         $url = Storage::disk('s3')->url($path);
-                 $book = new Book;
+        
+        $book = new Book;
         $book->category_id = $request->category_id;
         $book->title = $request->title;
         $book->author = $request->author;
@@ -45,8 +48,10 @@ public function registrateNewBook(Request $request){
         $book->status = $request->status;
         $book->photo_path = $url;
         $book->save();
-         return view('supplier.registration');
-                 } else {
+
+        return view('supplier.registration');
+        
+        } else {
             return redirect()
                 ->back()
                 ->withInput()

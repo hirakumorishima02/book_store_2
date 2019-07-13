@@ -10,6 +10,11 @@ use App\User;
 use App\UserInfo;
 use \Cart;
 use App\Buyable;
+require '../vendor/autoload.php';
+use Carbon\Carbon;
+use Stripe\Stripe;
+use Stripe\Customer;
+use Stripe\Charge;
 
 class CustomerController extends Controller
 {
@@ -82,10 +87,7 @@ class CustomerController extends Controller
         
         return view('customer.account',compact('user','userInfo'));
     }
-    
-    public function paymentComplete(){
-        return view('customer.paymentComplete');
-    }
+
     
     public function user(){
         $bookList = Book::all();
@@ -129,6 +131,42 @@ class CustomerController extends Controller
         return redirect('/cart');
     }
     
+    public function paymentComplete(Request $request){
+    /*単発決済用のコード*/
+        try {
+            Stripe::setApiKey('sk_test_pVUxs7fuQ3MbjMDt6ZYPtlq100yl4Yjf1i');
+
+            $customer = Customer::create(array(
+                'email' => $request->stripeEmail,
+                'source' => $request->stripeToken
+            ));
+
+            $charge = Charge::create(array(
+                'customer' => $customer->id,
+                'amount' => $request->amount,
+                'currency' => 'jpy'
+            ));
+
+            return back();
+        } catch (\Exception $ex) {
+            return $ex->getMessage();
+        }
+        
+        $dt = new Carbon();
+        
+        $i = 0;
+        foreach($request->num as $val){
+        $order = new Order;
+        $order->user_id = Auth::user()->id;
+        $order->book_id = $request->id;
+        $order->status = '1';
+        $order->sales_date = $dt->format('Y-m-d');
+        $order->sales_info = '1';
+        $order->save();
+        $i++;
+        }
+        return view('customer.paymentComplete');
+    }
     
     // test
     public function test(){

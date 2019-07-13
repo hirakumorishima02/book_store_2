@@ -45,7 +45,7 @@
         </tr>
     </thead>
     <tbody>
-<form action="/registrateNewBook" method="post" enctype="multipart/form-data">
+        <form action="/registrateNewBook" method="post" enctype="multipart/form-data">
         {{ csrf_field() }}
         <tr>
             <td><input type="text" name="title"></td>
@@ -73,8 +73,8 @@
             </td>
         </tr>
         <tr><td><input type="submit" value="登録"></td></tr>
-</form>
-</tbody>
+        </form>
+    </tbody>
 </table>
 </body>
 </html>

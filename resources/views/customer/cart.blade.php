@@ -30,17 +30,21 @@
                     <td class="uk-text-large">{{$total * 1.08}}円</td>
                     <td>
                         <form action="/paymentComplete">
+                            {{ csrf_field() }}
                                 <script
                                     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                                    data-key="{{ env('STRIPE_PUBLIC_KEY') }}"
-                                    data-amount={{$total * 1.08}}
+                                    data-key="pk_test_RbguENgpWfqVTAfQGLbXOffR00YAdmOg7Q"
+                                    data-amount="{{$total * 1.08}}"
                                     data-name="古本屋さん"
                                     data-label="決済をする"
-                                    data-description="Online shopping by Stripe"
+                                    data-description="Online course about integrating Stripe"
                                     data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
                                     data-locale="auto"
                                     data-currency="JPY">
                                 </script>
+                                @foreach($carts as $cart)
+                                <input type="hidden" name="amount" value="{{$total * 1.08}}">
+                                @endforeach
                         </form>
                     </td>
                 </tr>
