@@ -29,10 +29,10 @@ Route::get('/paymentComplete', 'CustomerController@paymentComplete');
 Route::get('/user', 'CustomerController@user');
 Route::get('/category/{id}', 'CustomerController@category');
 
-// SupplierController
-Route::get('/orders', 'SupplierController@orders');
-Route::get('/registration', 'SupplierController@registration');
-route::post('/registrateNewBook','SupplierController@registrateNewBook');
+ // 以下、本来SupplierControllerにあるもの。エラーが起こるため移植。
+Route::get('/orders', 'CustomerController@orders');
+Route::get('/registration', 'CustomerController@registration');
+route::post('/registrateNewBook','CustomerController@registrateNewBook');
 
 // logout
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');

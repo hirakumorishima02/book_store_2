@@ -5,8 +5,9 @@
 <div class="container">
     <div class="uk-card uk-card-default uk-card-body uk-width-1">
         <div class="uk-text-large">
-        <p>カートの中身</p>
+        <p>カート</p>
         </div>
+        @if(isset($carts))
         <table class="uk-table uk-table-hover uk-table-divider">
             <thead>
                 <th>購入商品</th>
@@ -42,8 +43,10 @@
                                     data-locale="auto"
                                     data-currency="JPY">
                                 </script>
-                                @foreach($carts as $cart)
                                 <input type="hidden" name="amount" value="{{$total * 1.08}}">
+                                @foreach($carts as $cart)
+                                <input type="hidden" name="id[]" value="{{$cart->id}}">
+                                <input type="hidden" name="row_id[]" value="{{$cart->rowId}}">
                                 @endforeach
                         </form>
                     </td>
@@ -55,6 +58,9 @@
                 </tr>
             </tbody>
         </table>
+        @else
+        カートの中身はありません。
+        @endif
     </div>
 </div>
 

@@ -8,7 +8,7 @@
         <p>アカウント情報</p>
         </div>
             <table class="uk-table uk-table-hover uk-table-divider">
-                @if(isset($userInfo)||isset($user))
+                @if(isset($userInfo)&&isset($user))
                 <form action="/updateAccount" method="post">
                 {{ csrf_field() }}
                 <tr>

@@ -34,8 +34,9 @@
     </thead>
     <tbody>
         <form action="updateOrderStates">
+        @foreach($orderList as $order)
         <tr>
-            <td>SHOE DOG</td>
+            <td>{{$order->book->title}}</td>
             <td>田中太郎</td>
             <td>600-0000</td>
             <td>京都府京都市〇〇〇〇</td>

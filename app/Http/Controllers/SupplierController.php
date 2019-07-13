@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Book;
+use App\Order;
 
 class SupplierController extends Controller
 {
@@ -16,7 +17,7 @@ class SupplierController extends Controller
         return view('supplier.registration');
     }
     
-public function registrateNewBook(Request $request){
+    public function registrateNewBook(Request $request){
                  $this->validate($request, [
             'photo_path' => [
                 // 必須
@@ -52,5 +53,10 @@ public function registrateNewBook(Request $request){
                 ->withInput()
                 ->withErrors(['file' => '画像がアップロードされていないか不正なデータです。']);
         }
+    }
+    
+    public function getOrder() {
+        $orderList = Order::where('status','=','1');
+        return view('supplier.orders',compact('orderList'));
     }
 }

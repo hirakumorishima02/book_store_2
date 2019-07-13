@@ -8,6 +8,7 @@ use App\Category;
 use App\Book;
 use App\User;
 use App\UserInfo;
+use App\Order;
 use \Cart;
 use App\Buyable;
 require '../vendor/autoload.php';
@@ -147,28 +148,80 @@ class CustomerController extends Controller
                 'currency' => 'jpy'
             ));
 
-            return back();
+            $dt = new Carbon();
+            
+            $i = 0;
+            foreach($request->id as $val){
+            $order = new Order;
+            $order->user_id = Auth::user()->id;
+            $order->book_id = $request->id[$i];
+            $order->status = '1';
+            $order->sales_date = $dt->format('Y-m-d');
+            $order->sales_info = $request->row_id[$i];
+            $order->save();
+            $i++;
+            }
+            Cart::destroy();
+            return view('customer.paymentComplete');
         } catch (\Exception $ex) {
             return $ex->getMessage();
         }
-        
-        $dt = new Carbon();
-        
-        $i = 0;
-        foreach($request->num as $val){
-        $order = new Order;
-        $order->user_id = Auth::user()->id;
-        $order->book_id = $request->id;
-        $order->status = '1';
-        $order->sales_date = $dt->format('Y-m-d');
-        $order->sales_info = '1';
-        $order->save();
-        $i++;
-        }
-        return view('customer.paymentComplete');
+
+    }
+
+    // 以下、本来SupplierControllerにあるもの。エラーが起こるため移植。
+    public function orders(){
+        return view('supplier.orders');
     }
     
-    // test
+    public function registration(){
+        return view('supplier.registration');
+    }
+    
+    public function registrateNewBook(Request $request){
+                 $this->validate($request, [
+            'photo_path' => [
+                // 必須
+                'required',
+                // アップロードされたファイルであること
+                'file',
+                // 画像ファイルであること
+                'image',
+                // MIMEタイプを指定
+                'mimes:jpeg,png',
+                // 最小縦横20px 最大縦横500px
+                'dimensions:min_width=20,min_height=20,max_width=500,max_height=500',
+            ]
+        ]);
+                if ($request->file('photo_path')->isValid([])) {
+        $path = $request->photo_path->store('photo', 's3');
+        Storage::disk('s3')->setVisibility($path, 'public');
+        $url = Storage::disk('s3')->url($path);
+                 $book = new Book;
+        $book->category_id = $request->category_id;
+        $book->title = $request->title;
+        $book->author = $request->author;
+        $book->isbn = $request->isbn;
+        $book->price = $request->price;
+        $book->publisher = $request->publisher;
+        $book->status = $request->status;
+        $book->photo_path = $url;
+        $book->save();
+         return view('supplier.registration');
+                 } else {
+            return redirect()
+                ->back()
+                ->withInput()
+                ->withErrors(['file' => '画像がアップロードされていないか不正なデータです。']);
+        }
+    }
+    
+    public function getOrder() {
+        $orderList = Order::where('status','=','1');
+        return view('supplier.orders',compact('orderList'));
+    }
+    
+       // test
     public function test(){
         return view('test');
     }

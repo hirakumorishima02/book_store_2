@@ -7,7 +7,7 @@
         <div class="uk-text-large">
         <p>アカウント情報</p>
         </div>
-            @if(isset($userInfo)||isset($user))
+            @if(isset($userInfo)&&isset($user))
             <table class="uk-table uk-table-hover uk-table-divider">
                 <tr>
                     <td>お名前</td>

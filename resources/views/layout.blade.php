@@ -37,6 +37,7 @@
                 <li><a href="/account">アカウント情報</a></li>
                 <li><a href="/cart">カート</a></li>
                 <li><a href="/logout">ログアウト</a></li>
+                <li><a href="/registration">本の登録</a></li>
             </ul>
         </div>
             <div class="uk-margin">
