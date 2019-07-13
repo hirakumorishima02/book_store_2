@@ -32,7 +32,8 @@ Route::get('/category/{id}', 'CustomerController@category');
  // 以下、本来SupplierControllerにあるもの。エラーが起こるため移植。
 Route::get('/orders', 'CustomerController@orders');
 Route::get('/registration', 'CustomerController@registration');
-route::post('/registrateNewBook','CustomerController@registrateNewBook');
+Route::post('/registrateNewBook','CustomerController@registrateNewBook');
+Route::post('/updateOrderStatus','CustomerController@updateOrderStatus');
 
 // logout
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');

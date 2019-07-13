@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Category;
@@ -147,6 +148,7 @@ class CustomerController extends Controller
                 'amount' => $request->amount,
                 'currency' => 'jpy'
             ));
+            
 
             $dt = new Carbon();
             
@@ -158,6 +160,7 @@ class CustomerController extends Controller
             $order->status = '1';
             $order->sales_date = $dt->format('Y-m-d');
             $order->sales_info = $request->row_id[$i];
+            $order->userInfo_id = Auth::user()->id;
             $order->save();
             $i++;
             }
@@ -171,7 +174,20 @@ class CustomerController extends Controller
 
     // 以下、本来SupplierControllerにあるもの。エラーが起こるため移植。
     public function orders(){
-        return view('supplier.orders');
+        $orders = Order::where('status','!=','0')->get();
+        return view('supplier.orders',compact('orders'));
+    }
+    
+    public function updateOrderStatus(Request $request){
+        $i = 0;
+        foreach($request->book_id as $id){
+        $order = Order::find($id);
+        $order->status = $request->status[$i];
+        $order->save();
+        $i++;
+        }
+        $orders = Order::where('status','!=','0')->get();
+        return view('supplier.orders',compact('orders'));
     }
     
     public function registration(){
@@ -214,11 +230,6 @@ class CustomerController extends Controller
                 ->withInput()
                 ->withErrors(['file' => '画像がアップロードされていないか不正なデータです。']);
         }
-    }
-    
-    public function getOrder() {
-        $orderList = Order::where('status','=','1');
-        return view('supplier.orders',compact('orderList'));
     }
     
        // test

@@ -17,6 +17,7 @@ class CreateOrdersTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id')->unsigned();
             $table->integer('book_id')->unsigned();
+            $table->integer('userInfo_id')->unsigned();
             $table->integer('status'); //発送済み・未発送・キャンセルなどの状態
             $table->date('sales_date'); //購入された日付
             $table->text('sales_info'); //stripeの決済完了番号
@@ -24,6 +25,12 @@ class CreateOrdersTable extends Migration
             
             $table
             ->foreign('user_id')
+            ->references('id')
+            ->on('users')
+            ->onDelete('cascade');
+            
+            $table
+            ->foreign('userInfo_id')
             ->references('id')
             ->on('users')
             ->onDelete('cascade');

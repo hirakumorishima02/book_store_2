@@ -33,23 +33,38 @@
         </tr>
     </thead>
     <tbody>
-        <form action="updateOrderStates">
-        @foreach($orderList as $order)
+        <form action="/updateOrderStatus" method="post">
+        {{csrf_field()}}
+        <?php $num = 0 ?>
+        @foreach($orders as $order)
         <tr>
-            <td>{{$order->book->title}}</td>
-            <td>田中太郎</td>
-            <td>600-0000</td>
-            <td>京都府京都市〇〇〇〇</td>
+            <!--Modelのリレーション-->
+            <td>{{$order->orders->title}}</td>
+            <td>{{$order->ordersToUser->name}}</td>
+            <td>{{$order->ordersToUserInfo->zip_code}}</td>
+            <td>{{$order->ordersToUserInfo->address}}</td>
             <td>
-                    <select name="status">
-                        <option value="1">未発送</option>
-                        <option value="2">発送済み</option>
-                        <option value="3">キャンセル</option>
-                        <option></option>
-                    </select>
+                <select name="status[]" onchange="submit(this.form)">
+                    @if($order->status == 1)
+                    <option value="1" selected>未発送</option>
+                    <option value="2">発送済み</option>
+                    <option value="3">キャンセル</option>
+                    @elseif($order->status == 2)
+                    <option value="1">未発送</option>
+                    <option value="2" selected>発送済み</option>
+                    <option value="3">キャンセル</option>
+                    @else
+                    <option value="1">未発送</option>
+                    <option value="2">発送済み</option>
+                    <option value="3" selected>キャンセル</option>
+                    @endif
+                </select>
             </td>
         </tr>
-        <input type="submit" value="状態の更新">
+        <input type="hidden" name="book_id[]" value="{{$order->id}}">
+        <?php $num++ ?>
+        @endforeach
+        <input type="hidden" value="{{$num}}" name="num">
         </form>
     </tbody>
 </table>
