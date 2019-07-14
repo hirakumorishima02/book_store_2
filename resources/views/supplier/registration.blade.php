@@ -13,11 +13,29 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"></script>
 </head>
 <body>
+@if($user_id == 1)
 <nav class="uk-navbar-container" uk-navbar>
-    <div class="uk-navbar-left">
+    <div class="uk-navbar-right">
         <ul class="uk-navbar-nav">
+            <li>
+                <a href="#">本のカテゴリー</a>
+                <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li><a href="/category/1">小説</a></li>
+                        <li><a href="/category/2">ノンフィクション</a></li>
+                        <li><a href="/category/3">ビジネス</a></li>
+                        <li><a href="/category/4">漫画</a></li>
+                        <li><a href="/category/5">その他</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="/account">アカウント情報</a></li>
+            <li><a href="/cart">カート</a></li>
+            <li><a href="/logout">ログアウト</a></li>
+            @if($user_id == 1)
             <li><a href="/orders">注文一覧</a></li>
             <li><a href="/registration">商品登録</a></li>
+            @endif
         </ul>
     </div>
 </nav>
@@ -77,4 +95,8 @@
 </tbody>
 </table>
 </body>
+@else
+管理者用画面です。
+<a href="/user">戻る</a>
+@endif
 </html>

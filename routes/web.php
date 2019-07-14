@@ -28,12 +28,13 @@ Route::get('/editAccount', 'CustomerController@editAccount');
 Route::get('/paymentComplete', 'CustomerController@paymentComplete');
 Route::get('/user', 'CustomerController@user');
 Route::get('/category/{id}', 'CustomerController@category');
+Route::post('/serch', 'CustomerController@serch');
 
  // 以下、本来SupplierControllerにあるもの。エラーが起こるため移植。
-Route::get('/orders', 'CustomerController@orders');
-Route::get('/registration', 'CustomerController@registration');
-Route::post('/registrateNewBook','CustomerController@registrateNewBook');
-Route::post('/updateOrderStatus','CustomerController@updateOrderStatus');
+Route::get('/orders', 'SupplierController@orders');
+Route::get('/registration', 'SupplierController@registration');
+Route::post('/registrateNewBook','SupplierController@registrateNewBook');
+Route::post('/updateOrderStatus','SupplierController@updateOrderStatus');
 
 // logout
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout');

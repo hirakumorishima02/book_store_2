@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+require '../vendor/autoload.php';
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserInfoRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Category;
 use App\Book;
@@ -12,7 +13,6 @@ use App\UserInfo;
 use App\Order;
 use \Cart;
 use App\Buyable;
-require '../vendor/autoload.php';
 use Carbon\Carbon;
 use Stripe\Stripe;
 use Stripe\Customer;
@@ -29,7 +29,8 @@ class CustomerController extends Controller
     public function account(){
         $userInfo = UserInfo::where('user_id','=', Auth::user()->id)->first();
         $user = User::where('id','=', Auth::user()->id)->first();
-        return view('customer.account',compact('user','userInfo'));
+        $user_id = Auth::user()->id;
+        return view('customer.account',compact('user','userInfo','user_id'));
     }
     
     public function book($id){
@@ -42,21 +43,25 @@ class CustomerController extends Controller
         }else if($book->status == 3){
             $status = '傷あり' ;
         }
-        return view('customer.book',compact('book','status'));
+        $user_id = Auth::user()->id;
+        return view('customer.book',compact('book','status','user_id'));
     }
     
     public function cart(){
         $carts = Cart::content();
-        return view('customer.cart')->with(compact('carts'));
+        $userInfo = UserInfo::where('user_id','=', Auth::user()->id)->first();
+        $user_id = Auth::user()->id;
+        return view('customer.cart')->with(compact('carts','userInfo','user_id'));
     }
     
     public function editAccount(){
         $userInfo = UserInfo::where('user_id','=', Auth::user()->id)->first();
         $user = User::where('id','=', Auth::user()->id)->first();
-        return view('customer.editAccount',compact('user','userInfo'));
+        $user_id = Auth::user()->id;
+        return view('customer.editAccount',compact('user','userInfo','user_id'));
     }
     
-    public function addAccount(Request $request){
+    public function addAccount(UserInfoRequest $request){
         $userInfo = new UserInfo;
         $userInfo->user_id = Auth::user()->id;
         $userInfo->zip_code = $request->zip_code;
@@ -97,13 +102,15 @@ class CustomerController extends Controller
         $j = mt_rand(0, count($bookList)-1);
         $k = mt_rand(0, count($bookList)-1);
         $l = mt_rand(0, count($bookList)-1);
-        return view('customer.user',compact('bookList','i','j','k','l'));
+        $user_id = Auth::user()->id;
+        return view('customer.user',compact('bookList','i','j','k','l','user_id'));
     }
     
     public function category($id){
         $category = Category::find($id);
         $bookList = Book::where('category_id','=', $id)->get();
-        return view('customer.category',compact('category','bookList'));
+        $user_id = Auth::user()->id;
+        return view('customer.category',compact('category','bookList','user_id'));
     }
     
     public function bookToCart($book_id) {
@@ -165,73 +172,21 @@ class CustomerController extends Controller
             $i++;
             }
             Cart::destroy();
-            return view('customer.paymentComplete');
+            $user_id = Auth::user()->id;
+            return view('customer.paymentComplete',compact('user_id'));
         } catch (\Exception $ex) {
             return $ex->getMessage();
         }
 
     }
+    
+    public function serch(Request $request){
+        $user_id = Auth::user()->id;
+        $keyword = $request->input('keyword');
+        $books = Book::where('title', 'like', '%'.$keyword.'%')->orWhere('author','like','%'.$keyword.'%')->orWhere('publisher','like','%'.$keyword.'%')->get();
+        return view ('customer.serch_resault',compact('books','keyword','user_id'));
+    }
 
-    // 以下、本来SupplierControllerにあるもの。エラーが起こるため移植。
-    public function orders(){
-        $orders = Order::where('status','!=','0')->get();
-        return view('supplier.orders',compact('orders'));
-    }
-    
-    public function updateOrderStatus(Request $request){
-        $i = 0;
-        foreach($request->book_id as $id){
-        $order = Order::find($id);
-        $order->status = $request->status[$i];
-        $order->save();
-        $i++;
-        }
-        $orders = Order::where('status','!=','0')->get();
-        return view('supplier.orders',compact('orders'));
-    }
-    
-    public function registration(){
-        return view('supplier.registration');
-    }
-    
-    public function registrateNewBook(Request $request){
-                 $this->validate($request, [
-            'photo_path' => [
-                // 必須
-                'required',
-                // アップロードされたファイルであること
-                'file',
-                // 画像ファイルであること
-                'image',
-                // MIMEタイプを指定
-                'mimes:jpeg,png',
-                // 最小縦横20px 最大縦横500px
-                'dimensions:min_width=20,min_height=20,max_width=500,max_height=500',
-            ]
-        ]);
-                if ($request->file('photo_path')->isValid([])) {
-        $path = $request->photo_path->store('photo', 's3');
-        Storage::disk('s3')->setVisibility($path, 'public');
-        $url = Storage::disk('s3')->url($path);
-                 $book = new Book;
-        $book->category_id = $request->category_id;
-        $book->title = $request->title;
-        $book->author = $request->author;
-        $book->isbn = $request->isbn;
-        $book->price = $request->price;
-        $book->publisher = $request->publisher;
-        $book->status = $request->status;
-        $book->photo_path = $url;
-        $book->save();
-         return view('supplier.registration');
-                 } else {
-            return redirect()
-                ->back()
-                ->withInput()
-                ->withErrors(['file' => '画像がアップロードされていないか不正なデータです。']);
-        }
-    }
-    
        // test
     public function test(){
         return view('test');

@@ -4,17 +4,35 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 use App\Book;
 use App\Order;
+use App\User;
 
 class SupplierController extends Controller
 {
+    // 以下、本来SupplierControllerにあるもの。エラーが起こるため移植。
     public function orders(){
-        return view('supplier.orders');
+        $orders = Order::where('status','!=','0')->get();
+        $user_id = Auth::user()->id;
+        return view('supplier.orders',compact('orders','user_id'));
+    }
+    
+    public function updateOrderStatus(Request $request){
+        $i = 0;
+        foreach($request->book_id as $id){
+        $order = Order::find($id);
+        $order->status = $request->status[$i];
+        $order->save();
+        $i++;
+        }
+        $orders = Order::where('status','!=','0')->get();
+        return view('supplier.orders',compact('orders'));
     }
     
     public function registration(){
-        return view('supplier.registration');
+        $user_id = Auth::user()->id;
+        return view('supplier.registration',compact('user_id'));
     }
     
     public function registrateNewBook(Request $request){
@@ -53,10 +71,5 @@ class SupplierController extends Controller
                 ->withInput()
                 ->withErrors(['file' => '画像がアップロードされていないか不正なデータです。']);
         }
-    }
-    
-    public function getOrder() {
-        $orderList = Order::where('status','=','1');
-        return view('supplier.orders',compact('orderList'));
     }
 }

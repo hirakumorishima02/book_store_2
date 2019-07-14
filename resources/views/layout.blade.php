@@ -37,13 +37,17 @@
                 <li><a href="/account">アカウント情報</a></li>
                 <li><a href="/cart">カート</a></li>
                 <li><a href="/logout">ログアウト</a></li>
-                <li><a href="/registration">本の登録</a></li>
+                @if($user_id == 1)
+                <li><a href="/orders">注文一覧</a></li>
+                <li><a href="/registration">商品登録</a></li>
+                @endif
             </ul>
         </div>
             <div class="uk-margin">
-                <form class="uk-search uk-search-default">
+                <form class="uk-search uk-search-default" action="serch" method="post">
+                    {{ csrf_field() }}
                     <span uk-search-icon></span>
-                    <input class="uk-search-input" type="search" placeholder="本の検索">
+                    <input class="uk-search-input" type="search" placeholder="本の検索" name="keyword">
                 </form>
             </div>
     </nav>
