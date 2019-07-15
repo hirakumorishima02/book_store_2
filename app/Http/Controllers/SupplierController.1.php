@@ -50,11 +50,11 @@ class SupplierController extends Controller
                 'dimensions:min_width=20,min_height=20,max_width=500,max_height=500',
             ]
         ]);
-                if ($request->file('photo_path')->isValid([])) {
+        if ($request->file('photo_path')->isValid([])) {
         $path = $request->photo_path->store('photo', 's3');
         Storage::disk('s3')->setVisibility($path, 'public');
         $url = Storage::disk('s3')->url($path);
-                 $book = new Book;
+        $book = new Book;
         $book->category_id = $request->category_id;
         $book->title = $request->title;
         $book->author = $request->author;
@@ -64,8 +64,10 @@ class SupplierController extends Controller
         $book->status = $request->status;
         $book->photo_path = $url;
         $book->save();
-         return view('supplier.registration');
-                 } else {
+        
+        $user_id = Auth::user()->id;
+         return view('supplier.registration',compact('user_id'));
+        } else {
             return redirect()
                 ->back()
                 ->withInput()
