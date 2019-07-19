@@ -7,6 +7,9 @@
     <div class="uk-card uk-card-default uk-card-body" style="z-index: 980;text-align:center;" uk-sticky="bottom: #offset"><h3>新着本のご案内</h3></div>
     <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slideshow>
 
+
+<!--bookList-->
+@if(isset($bookList))
     <ul class="uk-slideshow-items" style="height:1000px;">
         <li>
     <div class="uk-child-width-expand@s uk-text-center本のタイトル" uk-grid="parallax: 150">
@@ -415,6 +418,8 @@
     </div>
         </li>
     </ul>
+@endif
+<!--bookList-->
 
     <a class="uk-slidenav-large uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
     <a class="uk-slidenav-large uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>

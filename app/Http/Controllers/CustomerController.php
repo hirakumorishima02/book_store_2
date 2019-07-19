@@ -98,12 +98,18 @@ class CustomerController extends Controller
     
     public function user(){
         $bookList = Book::all();
-        $i = mt_rand(0, count($bookList)-1);
-        $j = mt_rand(0, count($bookList)-1);
-        $k = mt_rand(0, count($bookList)-1);
-        $l = mt_rand(0, count($bookList)-1);
-        $user_id = Auth::user()->id;
-        return view('customer.user',compact('bookList','i','j','k','l','user_id'));
+        
+        if(!isset($bookList)){
+            $i = mt_rand(0, count($bookList)-1);
+            $j = mt_rand(0, count($bookList)-1);
+            $k = mt_rand(0, count($bookList)-1);
+            $l = mt_rand(0, count($bookList)-1);
+            $user_id = Auth::user()->id;
+            return view('customer.user',compact('bookList','i','j','k','l','user_id'));
+        }else{
+            $user_id = Auth::user()->id;
+            return view('customer.user',compact('user_id'));
+        }
     }
     
     public function category($id){
