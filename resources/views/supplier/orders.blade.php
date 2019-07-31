@@ -13,7 +13,7 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js" type="text/javascript"></script>
 </head>
 <body>
-@if($user_id == 1)
+@if($user_id == 1 || $user_id == 2)
 <nav class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-right">
         <ul class="uk-navbar-nav">

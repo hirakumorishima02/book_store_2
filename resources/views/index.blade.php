@@ -56,15 +56,15 @@
     <div class="uk-child-width-expand@s uk-text-center本のタイトル" uk-grid="parallax: 150">
     <div>
         <div class="uk-card uk-card-default">
-            <div class="uk-card-media-top uk-height-small"><img src="/images/light.jpg" alt=""></div>
+            <div class="uk-card-media-top uk-height-small"><img src="/images/1.png" alt=""></div>
             <a href="item.html">
                 <div class="uk-card uk-card-default uk-card-body uk-grid-margin">
-                    <h3 class="uk-card-title">本のタイトル</h3>
+                    <h3 class="uk-card-title">星の子</h3>
                     <p style="overflow: hidden;text-overflow: ellipsis;height: 100x;">
                         価格　　120円<br>
-                        著書　　田中太郎<br>
-                        出版社　本の友の会<br>
-                        ISBN　　978-4-7710-1067-3<br>
+                        著書　　今村夏子<br>
+                        出版社　朝日新聞出版<br>
+                        ISBN　　978-4022514745<br>
                         </p>
                 </div>
             </a>
@@ -75,11 +75,11 @@
             <div class="uk-card-media-top uk-height-small"><img src="/images/light.jpg" alt=""></div>
             <a href="item.html">
                   <div class="uk-card uk-card-default uk-card-body uk-grid-margin">
-                    <h3 class="uk-card-title">本のタイトル</h3>
+                    <h3 class="uk-card-title">モトカレマニア</h3>
                     <p style="overflow: hidden;text-overflow: ellipsis;height: 100x;">
-                        価格　　120円<br>
-                        著書　　田中太郎<br>
-                        出版社　本の友の会<br>
+                        価格　　220円<br>
+                        著書　　瀧波ユカリ<br>
+                        出版社　講談社<br>
                         ISBN　　978-4-7710-1067-3<br>
                         </p>
                 </div>
@@ -88,14 +88,14 @@
     </div>
     <div>
         <div class="uk-card uk-card-default">
-            <div class="uk-card-media-top uk-height-small"><img src="/images/light.jpg" alt=""></div>
+            <div class="uk-card-media-top uk-height-small"><img src="/images/3.png" alt=""></div>
             <a href="item.html">
                   <div class="uk-card uk-card-default uk-card-body uk-grid-margin">
-                    <h3 class="uk-card-title">本のタイトル</h3>
+                    <h3 class="uk-card-title">FIGARO</h3>
                     <p style="overflow: hidden;text-overflow: ellipsis;height: 100x;">
-                        価格　　120円<br>
-                        著書　　田中太郎<br>
-                        出版社　本の友の会<br>
+                        価格　　864円<br>
+                        著書　　石井ゆかり<br>
+                        出版社　CCCメディアハウ<br>
                         ISBN　　978-4-7710-1067-3<br>
                         </p>
                 </div>
@@ -104,15 +104,15 @@
     </div>
     <div>
         <div class="uk-card uk-card-default">
-            <div class="uk-card-media-top uk-height-small"><img src="/images/light.jpg" alt=""></div>
+            <div class="uk-card-media-top uk-height-small"><img src="/images/4.png" alt=""></div>
             <a href="item.html">
                   <div class="uk-card uk-card-default uk-card-body uk-grid-margin">
-                    <h3 class="uk-card-title">本のタイトル</h3>
+                    <h3 class="uk-card-title">柴犬のチャイ</h3>
                     <p style="overflow: hidden;text-overflow: ellipsis;height: 100x;">
-                        価格　　120円<br>
-                        著書　　田中太郎<br>
-                        出版社　本の友の会<br>
-                        ISBN　　978-4-7710-1067-3<br>
+                        価格　　1200円<br>
+                        著書　　あおきひろえ<br>
+                        出版社　BL出版<br>
+                        ISBN　　978-4776405986<br>
                         </p>
                 </div>
             </a>
@@ -121,27 +121,34 @@
     </div>
     <div class="uk-child-width-expand@s uk-text-center" uk-grid="parallax: 150">
     <div>
+    <div>
         <div class="uk-card uk-card-default">
-            <div class="uk-card-media-top uk-height-small"><img src="/images/light.jpg" alt=""></div>
+            <div class="uk-card-media-top uk-height-small"><img src="/images/5.png" alt=""></div>
             <a href="item.html">
-                <div class="uk-card uk-card-default uk-card-body uk-grid-margin">
-                    <h3 class="uk-card-title">本のタイトル</h3>
-                    <p style="overflow: hidden;text-overflow: ellipsis;height: 70px;">依頼内容の説明です。　依頼内容の説明です。　依頼内容の説明です。　依頼内容の説明です。</p>
+                  <div class="uk-card uk-card-default uk-card-body uk-grid-margin">
+                    <h3 class="uk-card-title">嘘つきアーニャの真っ赤な真実</h3>
+                    <p style="overflow: hidden;text-overflow: ellipsis;height: 100x;">
+                        価格　　447円<br>
+                        著書　　米原万里<br>
+                        出版社　角川学芸出版<br>
+                        ISBN　　978-4043756018<br>
+                        </p>
                 </div>
             </a>
         </div>
     </div>
+    </div>
     <div>
         <div class="uk-card uk-card-default">
-            <div class="uk-card-media-top uk-height-small"><img src="/images/light.jpg" alt=""></div>
+            <div class="uk-card-media-top uk-height-small"><img src="/images/6.png" alt=""></div>
             <a href="item.html">
                   <div class="uk-card uk-card-default uk-card-body uk-grid-margin">
-                    <h3 class="uk-card-title">本のタイトル</h3>
+                    <h3 class="uk-card-title">錦繍(きんしゅう) </h3>
                     <p style="overflow: hidden;text-overflow: ellipsis;height: 100x;">
-                        価格　　120円<br>
-                        著書　　田中太郎<br>
-                        出版社　本の友の会<br>
-                        ISBN　　978-4-7710-1067-3<br>
+                        価格　　561円<br>
+                        著書　　宮本輝<br>
+                        出版社　新潮文庫<br>
+                        ISBN　　978-4101307022<br>
                         </p>
                 </div>
             </a>
@@ -149,15 +156,15 @@
     </div>
     <div>
         <div class="uk-card uk-card-default">
-            <div class="uk-card-media-top uk-height-small"><img src="/images/light.jpg" alt=""></div>
+            <div class="uk-card-media-top uk-height-small"><img src="/images/7.png" alt=""></div>
             <a href="item.html">
                   <div class="uk-card uk-card-default uk-card-body uk-grid-margin">
-                    <h3 class="uk-card-title">本のタイトル</h3>
+                    <h3 class="uk-card-title">メタモルフォーゼの縁側</h3>
                     <p style="overflow: hidden;text-overflow: ellipsis;height: 100x;">
-                        価格　　120円<br>
-                        著書　　田中太郎<br>
-                        出版社　本の友の会<br>
-                        ISBN　　978-4-7710-1067-3<br>
+                        価格　　742円<br>
+                        著書　　鶴谷 香央理<br>
+                        出版社　KADOKAWA<br>
+                        ISBN　　978-4041082249<br>
                         </p>
                 </div>
             </a>
@@ -165,13 +172,13 @@
     </div>
     <div>
         <div class="uk-card uk-card-default">
-            <div class="uk-card-media-top uk-height-small"><img src="/images/light.jpg" alt=""></div>
+            <div class="uk-card-media-top uk-height-small"><img src="/images/8.png" alt=""></div>
             <a href="item.html">
                   <div class="uk-card uk-card-default uk-card-body uk-grid-margin">
-                    <h3 class="uk-card-title">本のタイトル</h3>
+                    <h3 class="uk-card-title">雨宿り</h3>
                     <p style="overflow: hidden;text-overflow: ellipsis;height: 100x;">
                         価格　　120円<br>
-                        著書　　田中太郎<br>
+                        著書　　宮思帆他<br>
                         出版社　本の友の会<br>
                         ISBN　　978-4-7710-1067-3<br>
                         </p>
@@ -183,256 +190,7 @@
         </li>
         
         
-        <li>
-               <div class="uk-child-width-expand@s uk-text-center本のタイトル" uk-grid="parallax: 150">
-    <div>
-        <div class="uk-card uk-card-default">
-            <div class="uk-card-media-top uk-height-small"><img src="/images/light.jpg" alt=""></div>
-            <a href="item.html">
-                <div class="uk-card uk-card-default uk-card-body uk-grid-margin">
-                    <h3 class="uk-card-title">本のタイトル</h3>
-                    <p style="overflow: hidden;text-overflow: ellipsis;height: 70px;">依頼内容の説明です。　依頼内容の説明です。　依頼内容の説明です。　依頼内容の説明です。</p>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div>
-        <div class="uk-card uk-card-default">
-            <div class="uk-card-media-top uk-height-small"><img src="/images/light.jpg" alt=""></div>
-            <a href="item.html">
-                  <div class="uk-card uk-card-default uk-card-body uk-grid-margin">
-                    <h3 class="uk-card-title">本のタイトル</h3>
-                    <p style="overflow: hidden;text-overflow: ellipsis;height: 100x;">
-                        価格　　120円<br>
-                        著書　　田中太郎<br>
-                        出版社　本の友の会<br>
-                        ISBN　　978-4-7710-1067-3<br>
-                        </p>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div>
-        <div class="uk-card uk-card-default">
-            <div class="uk-card-media-top uk-height-small"><img src="/images/light.jpg" alt=""></div>
-            <a href="item.html">
-                  <div class="uk-card uk-card-default uk-card-body uk-grid-margin">
-                    <h3 class="uk-card-title">本のタイトル</h3>
-                    <p style="overflow: hidden;text-overflow: ellipsis;height: 100x;">
-                        価格　　120円<br>
-                        著書　　田中太郎<br>
-                        出版社　本の友の会<br>
-                        ISBN　　978-4-7710-1067-3<br>
-                        </p>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div>
-        <div class="uk-card uk-card-default">
-            <div class="uk-card-media-top uk-height-small"><img src="/images/light.jpg" alt=""></div>
-            <a href="item.html">
-                  <div class="uk-card uk-card-default uk-card-body uk-grid-margin">
-                    <h3 class="uk-card-title">本のタイトル</h3>
-                    <p style="overflow: hidden;text-overflow: ellipsis;height: 100x;">
-                        価格　　120円<br>
-                        著書　　田中太郎<br>
-                        出版社　本の友の会<br>
-                        ISBN　　978-4-7710-1067-3<br>
-                        </p>
-                </div>
-            </a>
-        </div>
-    </div>
-    </div>
-    <div class="uk-child-width-expand@s uk-text-center" uk-grid="parallax: 150">
-    <div>
-        <div class="uk-card uk-card-default">
-            <div class="uk-card-media-top uk-height-small"><img src="/images/light.jpg" alt=""></div>
-            <a href="item.html">
-                <div class="uk-card uk-card-default uk-card-body uk-grid-margin">
-                    <h3 class="uk-card-title">本のタイトル</h3>
-                    <p style="overflow: hidden;text-overflow: ellipsis;height: 70px;">依頼内容の説明です。　依頼内容の説明です。　依頼内容の説明です。　依頼内容の説明です。</p>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div>
-        <div class="uk-card uk-card-default">
-            <div class="uk-card-media-top uk-height-small"><img src="/images/light.jpg" alt=""></div>
-            <a href="item.html">
-                  <div class="uk-card uk-card-default uk-card-body uk-grid-margin">
-                    <h3 class="uk-card-title">本のタイトル</h3>
-                    <p style="overflow: hidden;text-overflow: ellipsis;height: 100x;">
-                        価格　　120円<br>
-                        著書　　田中太郎<br>
-                        出版社　本の友の会<br>
-                        ISBN　　978-4-7710-1067-3<br>
-                        </p>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div>
-        <div class="uk-card uk-card-default">
-            <div class="uk-card-media-top uk-height-small"><img src="/images/light.jpg" alt=""></div>
-            <a href="item.html">
-                  <div class="uk-card uk-card-default uk-card-body uk-grid-margin">
-                    <h3 class="uk-card-title">本のタイトル</h3>
-                    <p style="overflow: hidden;text-overflow: ellipsis;height: 100x;">
-                        価格　　120円<br>
-                        著書　　田中太郎<br>
-                        出版社　本の友の会<br>
-                        ISBN　　978-4-7710-1067-3<br>
-                        </p>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div>
-        <div class="uk-card uk-card-default">
-            <div class="uk-card-media-top uk-height-small"><img src="/images/light.jpg" alt=""></div>
-            <a href="item.html">
-                  <div class="uk-card uk-card-default uk-card-body uk-grid-margin">
-                    <h3 class="uk-card-title">本のタイトル</h3>
-                    <p style="overflow: hidden;text-overflow: ellipsis;height: 100x;">
-                        価格　　120円<br>
-                        著書　　田中太郎<br>
-                        出版社　本の友の会<br>
-                        ISBN　　978-4-7710-1067-3<br>
-                        </p>
-                </div>
-            </a>
-        </div>
-    </div>
-    </div>
-        </li>
-        
-        
-        <li>
-               <div class="uk-child-width-expand@s uk-text-center本のタイトル" uk-grid="parallax: 150">
-    <div>
-        <div class="uk-card uk-card-default">
-            <div class="uk-card-media-top uk-height-small"><img src="/images/light.jpg" alt=""></div>
-            <a href="item.html">
-                <div class="uk-card uk-card-default uk-card-body uk-grid-margin">
-                    <h3 class="uk-card-title">本のタイトル</h3>
-                    <p style="overflow: hidden;text-overflow: ellipsis;height: 70px;">依頼内容の説明です。　依頼内容の説明です。　依頼内容の説明です。　依頼内容の説明です。</p>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div>
-        <div class="uk-card uk-card-default">
-            <div class="uk-card-media-top uk-height-small"><img src="/images/light.jpg" alt=""></div>
-            <a href="item.html">
-                  <div class="uk-card uk-card-default uk-card-body uk-grid-margin">
-                    <h3 class="uk-card-title">本のタイトル</h3>
-                    <p style="overflow: hidden;text-overflow: ellipsis;height: 100x;">
-                        価格　　120円<br>
-                        著書　　田中太郎<br>
-                        出版社　本の友の会<br>
-                        ISBN　　978-4-7710-1067-3<br>
-                        </p>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div>
-        <div class="uk-card uk-card-default">
-            <div class="uk-card-media-top uk-height-small"><img src="/images/light.jpg" alt=""></div>
-            <a href="item.html">
-                  <div class="uk-card uk-card-default uk-card-body uk-grid-margin">
-                    <h3 class="uk-card-title">本のタイトル</h3>
-                    <p style="overflow: hidden;text-overflow: ellipsis;height: 100x;">
-                        価格　　120円<br>
-                        著書　　田中太郎<br>
-                        出版社　本の友の会<br>
-                        ISBN　　978-4-7710-1067-3<br>
-                        </p>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div>
-        <div class="uk-card uk-card-default">
-            <div class="uk-card-media-top uk-height-small"><img src="/images/light.jpg" alt=""></div>
-            <a href="item.html">
-                  <div class="uk-card uk-card-default uk-card-body uk-grid-margin">
-                    <h3 class="uk-card-title">本のタイトル</h3>
-                    <p style="overflow: hidden;text-overflow: ellipsis;height: 100x;">
-                        価格　　120円<br>
-                        著書　　田中太郎<br>
-                        出版社　本の友の会<br>
-                        ISBN　　978-4-7710-1067-3<br>
-                        </p>
-                </div>
-            </a>
-        </div>
-    </div>
-    </div>
-    <div class="uk-child-width-expand@s uk-text-center" uk-grid="parallax: 150">
-    <div>
-        <div class="uk-card uk-card-default">
-            <div class="uk-card-media-top uk-height-small"><img src="/images/light.jpg" alt=""></div>
-            <a href="item.html">
-                <div class="uk-card uk-card-default uk-card-body uk-grid-margin">
-                    <h3 class="uk-card-title">本のタイトル</h3>
-                    <p style="overflow: hidden;text-overflow: ellipsis;height: 70px;">依頼内容の説明です。　依頼内容の説明です。　依頼内容の説明です。　依頼内容の説明です。</p>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div>
-        <div class="uk-card uk-card-default">
-            <div class="uk-card-media-top uk-height-small"><img src="/images/light.jpg" alt=""></div>
-            <a href="item.html">
-                  <div class="uk-card uk-card-default uk-card-body uk-grid-margin">
-                    <h3 class="uk-card-title">本のタイトル</h3>
-                    <p style="overflow: hidden;text-overflow: ellipsis;height: 100x;">
-                        価格　　120円<br>
-                        著書　　田中太郎<br>
-                        出版社　本の友の会<br>
-                        ISBN　　978-4-7710-1067-3<br>
-                        </p>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div>
-        <div class="uk-card uk-card-default">
-            <div class="uk-card-media-top uk-height-small"><img src="/images/light.jpg" alt=""></div>
-            <a href="item.html">
-                  <div class="uk-card uk-card-default uk-card-body uk-grid-margin">
-                    <h3 class="uk-card-title">本のタイトル</h3>
-                    <p style="overflow: hidden;text-overflow: ellipsis;height: 100x;">
-                        価格　　120円<br>
-                        著書　　田中太郎<br>
-                        出版社　本の友の会<br>
-                        ISBN　　978-4-7710-1067-3<br>
-                        </p>
-                </div>
-            </a>
-        </div>
-    </div>
-    <div>
-        <div class="uk-card uk-card-default">
-            <div class="uk-card-media-top uk-height-small"><img src="/images/light.jpg" alt=""></div>
-            <a href="item.html">
-                  <div class="uk-card uk-card-default uk-card-body uk-grid-margin">
-                    <h3 class="uk-card-title">本のタイトル</h3>
-                    <p style="overflow: hidden;text-overflow: ellipsis;height: 100x;">
-                        価格　　120円<br>
-                        著書　　田中太郎<br>
-                        出版社　本の友の会<br>
-                        ISBN　　978-4-7710-1067-3<br>
-                        </p>
-                </div>
-            </a>
-        </div>
-    </div>
-    </div>
-        </li>
+
     </ul>
 
     <a class="uk-slidenav-large uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
@@ -452,7 +210,7 @@
             <div id="follow_item">
                 <div class="uk-card-body">
                     <h3 class="uk-card-title">小説</h3>
-                    <p>依頼文です。 依頼文です。 依頼文です。 依頼文です。 依頼文です。 依頼文です。 </p>
+                    <p>ワクワクドキドキ、心踊る小説ジャンルです。</p>
                 </div>
             </div>
         </div>
@@ -466,7 +224,7 @@
             <div>
                 <div class="uk-card-body">
                     <h3 class="uk-card-title">ノンフィクション</h3>
-                    <p>依頼文です。 依頼文です。 依頼文です。 依頼文です。 依頼文です。 依頼文です。 </p>
+                    <p>嘘のようなホントの話。ノンフィクションジャンルです。</p>
                 </div>
             </div>
         </div>
@@ -480,7 +238,7 @@
             <div id="follow_item">
                 <div class="uk-card-body">
                     <h3 class="uk-card-title">ビジネス</h3>
-                    <p>依頼文です。 依頼文です。 依頼文です。 依頼文です。 依頼文です。 依頼文です。 </p>
+                    <p>読めば仕事が楽しくなる？ビジネスジャンルです。</p>
                 </div>
             </div>
         </div>
@@ -494,7 +252,7 @@
             <div>
                 <div class="uk-card-body">
                     <h3 class="uk-card-title">漫画</h3>
-                    <p>依頼文です。 依頼文です。 依頼文です。 依頼文です。 依頼文です。 依頼文です。 </p>
+                    <p>老若男女楽しめる。漫画ジャンルです。</p>
                 </div>
             </div>
         </div>
@@ -508,7 +266,7 @@
             <div id="follow_item">
                 <div class="uk-card-body">
                     <h3 class="uk-card-title">その他</h3>
-                    <p>依頼文です。 依頼文です。 依頼文です。 依頼文です。 依頼文です。 依頼文です。 </p>
+                    <p>ジャンルに収まらない幅広さ。ノンジャンルです。</p>
                 </div>
             </div>
         </div>
