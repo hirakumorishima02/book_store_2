@@ -44,6 +44,7 @@
     <!--本の情報と画像ここまで-->
 <!--応募フォーム-->
 <div style="width:700px;margin: 0 auto;">
+@if(isset($userInfo))
 <form action="/bookToCart/{{$book->id}}" method="get">
 {{ csrf_field() }}
     <fieldset class="uk-fieldset">
@@ -52,6 +53,9 @@
     </p>
     </fieldset>
 </form>
+@else
+<p>先に<a href='/account'>アカウント情報を登録</a>してください。</p>
+@endif
 </div>
 </div>
 

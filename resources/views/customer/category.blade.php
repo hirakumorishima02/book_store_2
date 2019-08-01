@@ -11,8 +11,7 @@
             </div>
             <div id="follow_item">
                 <div class="uk-card-body">
-                    <h3 class="uk-card-title">{{$category->category}}</h3>
-                    <p>依頼文です。 依頼文です。 依頼文です。 依頼文です。 依頼文です。 依頼文です。 </p>
+                    <h1 class="uk-card-title">{{$category->category}}</h1>
                 </div>
             </div>
         </div>

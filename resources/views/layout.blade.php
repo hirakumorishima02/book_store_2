@@ -37,7 +37,7 @@
                 <li><a href="/account">アカウント情報</a></li>
                 <li><a href="/cart">カート</a></li>
                 <li><a href="/logout">ログアウト</a></li>
-                @if($user_id == 2)
+                @if($user_id == 1 || $user_id == 2)
                 <li><a href="/orders">注文一覧</a></li>
                 <li><a href="/registration">商品登録</a></li>
                 @endif

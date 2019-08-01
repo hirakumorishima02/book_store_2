@@ -44,7 +44,8 @@ class CustomerController extends Controller
             $status = '傷あり' ;
         }
         $user_id = Auth::user()->id;
-        return view('customer.book',compact('book','status','user_id'));
+        $userInfo = UserInfo::where('user_id','=', Auth::user()->id)->first();
+        return view('customer.book',compact('book','status','user_id','userInfo'));
     }
     
     public function cart(){
@@ -76,8 +77,8 @@ class CustomerController extends Controller
         
         $userInfo = UserInfo::where('user_id','=', Auth::user()->id)->first();
         $user = User::where('id','=', Auth::user()->id)->first();
-        
-        return view('customer.account',compact('user','userInfo'));
+        $user_id = Auth::user()->id;
+        return view('customer.account',compact('user','userInfo','user_id'));
     }
     
     public function updateAccount(Request $request){
@@ -99,7 +100,7 @@ class CustomerController extends Controller
     public function user(){
         $bookList = Book::all();
         
-        if(!isset($bookList)){
+        if(isset($bookList)){
             $i = mt_rand(0, count($bookList)-1);
             $j = mt_rand(0, count($bookList)-1);
             $k = mt_rand(0, count($bookList)-1);
@@ -134,7 +135,9 @@ class CustomerController extends Controller
             ]);
         
         $carts = Cart::content();
-        return view('customer.cart')->with(compact('carts'));
+        $user_id = Auth::user()->id;
+        $userInfo = UserInfo::where('user_id','=', Auth::user()->id)->first();
+        return view('customer.cart')->with(compact('carts','user_id','userInfo'));
     }
     
     public function reset() {
